@@ -72,7 +72,7 @@
 
                     <div class="form-group">
                         <label for="input_cv">Your CV</label>
-                        <input name="input_cv" id="input_cv" aria-describedby="input_cv_help" type="file" class="form-control-file" required>
+                        <input name="input_cv" id="input_cv" aria-describedby="input_cv_help" type="file" class="form-control-file" accept="application/pdf" required>
                         <small id="input_cv_help" class="form-text text-muted">Please upload PDF format of your CV.</small>
                     </div>
 

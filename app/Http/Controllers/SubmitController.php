@@ -22,5 +22,7 @@ class SubmitController extends Controller
             'message' => $data['input_message'],
             'cv' => $path
         ]);
+
+        return view('success');
     }
 }
