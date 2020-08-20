@@ -17,6 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::post('submit_cv', 'SubmitController@process')->name('submit_cv');
+
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

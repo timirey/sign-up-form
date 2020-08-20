@@ -22,7 +22,7 @@
     <title>Job offer</title>
 </head>
 <body class="bg-gradient">
-<div class="container py-5 col-md-4">
+<div class="container mt-5 col-md-4">
     <div class="card">
         <div class="card-body">
             <div class="text-center">
@@ -31,7 +31,8 @@
                 <hr>
             </div>
             <div>
-                <form>
+                <form action="{{ route('submit_cv') }}" method="post" enctype="multipart/form-data">
+                    @csrf
                     <div class="form-group">
                         <label for="input_name">Your Name</label>
                         <div class="input-group">
@@ -40,7 +41,7 @@
                                     <i class="fas fa-user"></i>
                                 </div>
                             </div>
-                            <input type="text" class="form-control" id="input_name" aria-describedby="input_name_help" placeholder="example: John Doe" autofocus required>
+                            <input name="input_name" type="text" class="form-control" id="input_name" aria-describedby="input_name_help" placeholder="example: John Doe" autofocus required>
                         </div>
                     </div>
 
@@ -52,7 +53,7 @@
                                     <i class="fas fa-envelope"></i>
                                 </div>
                             </div>
-                            <input type="text" class="form-control" id="input_name" aria-describedby="input_email_help" placeholder="example: john.doe@mail.com" required>
+                            <input name="input_email" type="email" class="form-control" id="input_name" aria-describedby="input_email_help" placeholder="example: john.doe@mail.com" required>
                         </div>
                         <small id="input_emil_help" class="form-text text-muted">We'll never share your email with anyone else.</small>
                     </div>
@@ -65,13 +66,13 @@
                                     <i class="fas fa-comment"></i>
                                 </div>
                             </div>
-                            <textarea class="form-control" id="input_message" placeholder="example: I'd like to say that ..." rows="3"></textarea>
+                            <textarea name="input_message" class="form-control" id="input_message" placeholder="example: I'd like to say that ..." rows="3"></textarea>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="input_cv">Your CV</label>
-                        <input id="input_cv" aria-describedby="input_cv_help" type="file" class="form-control-file" required>
+                        <input name="input_cv" id="input_cv" aria-describedby="input_cv_help" type="file" class="form-control-file" required>
                         <small id="input_cv_help" class="form-text text-muted">Please upload PDF format of your CV.</small>
                     </div>
 
